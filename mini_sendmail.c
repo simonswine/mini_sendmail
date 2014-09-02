@@ -58,7 +58,12 @@
 
 
 /* Defines. */
+#ifndef SMTP_PORT
 #define SMTP_PORT 25
+#endif /* SMTP_PORT */
+#ifndef SMTP_HOST
+#define SMTP_HOST "127.0.0.1"
+#endif /* SMTP_HOST */
 #define DEFAULT_TIMEOUT 60
 
 
@@ -113,7 +118,7 @@ main( int argc, char** argv )
     fake_from = (char*) 0;
     parse_message = 0;
 #ifdef DO_MINUS_SP
-    server = "127.0.0.1";
+    server = SMTP_HOST;
     port = SMTP_PORT;
 #endif /* DO_MINUS_SP */
     verbose = 0;
