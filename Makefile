@@ -12,7 +12,7 @@ BINDIR =	/usr/local/sbin
 MANDIR =	/usr/local/man
 CC =		cc
 CFLAGS =	-O -D"SMTP_HOST=\"$(SMTP_HOST)\"" -DSMTP_PORT=$(SMTP_PORT) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
-LDFLAGS =	-s -static
+LDFLAGS =	-s
 LDLIBS =	$(SYSV_LIBS)
 
 CC :=		$(DIET) $(CC)
