@@ -159,12 +159,15 @@ main( int argc, char** argv )
 	if ( pw == (struct passwd*) 0 )
 	    {
 	    (void) fprintf( stderr, "%s: can't determine username\n", argv0 );
-	    exit( 1 );
+	    username = "unknown";
 	    }
-	username = pw->pw_name;
+    else
+        {
+	    username = pw->pw_name;
+        }
 #else /* DO_GETPWUID */
 	(void) fprintf( stderr, "%s: can't determine username\n", argv0 );
-	exit( 1 );
+	username = "unknown";
 #endif /* DO_GETPWUID */
 	}
 
